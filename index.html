@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <meta name="keywords" content="Years,leap year calculator, 2021,2020,2019">
+    <meta name="description" content="Find wether a year is leap or not.">
+    <meta name="author" content="Abdullah Sheraz">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="herosection">
+            <h1 class="heading"> Leap Year Calculator</h1>
+            <div class="input">
+                <input class="inputno" id="wd">
+            </div>
+            <div class="search">
+            <button name="" value="Search" class="button" onclick="calcy()">Search</button>
+        </div>
+    </div>
+    <script>
+        const calcy = () => {
+            let wd = document.getElementById('wd').value;
+            let answer =""; 
+
+            
+         if(!wd) {
+             alert("Plz Fill The Data!")
+         } else {
+            if (wd % 4 === 0) {
+                if (wd % 100 === 0) {
+                    if (wd % 400 === 0) {
+                        answer="The year " + wd + " is leap year";
+                    }
+                    else {
+                        answer="The year " + wd + " is not a leap year";
+                    }
+                }
+                else {
+                    answer="The year " + wd + " is a leap year";
+                }
+            }
+            else {
+                answer="The year " + wd + " is not a leap year";
+            }
+
+            document.getElementById('showData').innerHTML=`${answer}`
+         }
+        }
+    </script>
+    <p id="showData" style="font-size: 20px; color: darkgoldenrod;text-align: center;"></p>
+</body>
+</html>
